@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Poppins", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+  }
+  
+  body {
+    @apply transition-colors duration-300;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* ==========================================================================
+   Print and PDF Export Optimizations (A4 & At least 20mm margins)
+   ========================================================================== */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 20mm !important; /* Strictly safe 20mm margin on all sides */
+  }
+
+  /* Force standard print colors and background */
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    height: auto !important;
+    overflow: visible !important;
+    font-size: 11pt !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide headers, menus, footers, website contents, slide controls, etc. */
+  nav, header, footer, main, canvas, #theme-toggle, .print\:hidden {
+    display: none !important;
+  }
+
+  /* Reset outer overlay fixed wrapping of the modal to flow naturally for multi-page print */
+  .fixed.inset-0.z-50 {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+    display: block !important;
+    box-shadow: none !important;
+  }
+
+  /* Hide backdrop shadows under the screen card overlay */
+  .absolute.inset-0.bg-slate-950\/80 {
+    display: none !important;
+  }
+
+  /* Ensure modal card can flow naturally without scrollbars or screen height bounds */
+  #cv-modal-sheet {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  /* Make sure internal resume body has no margins or paddings that sum up with @page margins */
+  .cv-print-body {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* Prevent elements from breaking mid-section across pages */
+  .print-avoid-break {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* General typography tweaks for print crispness */
+  p, span, li, tr, td {
+    color: #111111 !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #0b2985 !important; /* Official deep blue brand color */
+  }
+
+  /* Support clean flow link formats */
+  a {
+    text-decoration: none !important;
+    color: #0b2985 !important;
+  }
+}
+
+
