@@ -146,7 +146,7 @@ renderSectionHeader('ABOUT ME');
 doc.setFont('helvetica', 'normal');
 doc.setFontSize(8.5);
 doc.setTextColor(subTextColor[0], subTextColor[1], subTextColor[2]);
-doc.text(splitSummary, marginX, posY, { align: 'justify' });
+doc.text(summaryText, marginX, posY, { maxWidth: printableWidth });
 posY += summaryHeight + 6;
 
 // WORK EXPERIENCE Header
@@ -165,7 +165,7 @@ doc.setFontSize(8.5);
 doc.setTextColor(subTextColor[0], subTextColor[1], subTextColor[2]);
 const utdi_desc = 'Contributing to student recruitment and institutional branding efforts by leading social media initiatives, developing content strategies, monitoring campaign performance, and supporting integrated digital marketing activities across multiple platforms.';
 const splitUtdiDesc = doc.splitTextToSize(utdi_desc, printableWidth);
-doc.text(splitUtdiDesc, marginX, posY, { align: 'justify' });
+doc.text(utdi_desc, marginX, posY, { maxWidth: printableWidth });
 posY += (splitUtdiDesc.length * 3.8) + 2;
 
 // Sub-role: Social Media Strategist & Digital Advertiser
