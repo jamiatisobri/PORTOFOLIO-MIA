@@ -169,7 +169,7 @@ doc.text(utdi_desc, marginX, posY, { maxWidth: printableWidth });
 posY += (splitUtdiDesc.length * 3.8) + 2;
 
 // Sub-role: Social Media Strategist & Digital Advertiser
-doc.setFont('helvetica', 'bolditalic');
+doc.setFont('helvetica', 'italic');
 doc.setFontSize(9);
 doc.setTextColor(textColor[0], textColor[1], textColor[2]);
 doc.text('Social Media Strategist & Digital Advertiser (Admission & Marketing Division)', marginX, posY);
@@ -208,7 +208,7 @@ doc.text('A company specializing in the textile industry, focusing on selling fa
 posY += 5;
 
 // Sub-role: Social Media Specialist
-doc.setFont('helvetica', 'bolditalic');
+doc.setFont('helvetica', 'italic');
 doc.setFontSize(9);
 doc.setTextColor(textColor[0], textColor[1], textColor[2]);
 doc.text('Social Media Specialist', marginX, posY);
@@ -233,10 +233,11 @@ jwwk_sms_bullets.forEach(bullet => {
 posY += 3;
 
 // Sub-role: Personal Assistant
-doc.setFont('helvetica', 'bolditalic');
+doc.setFont('helvetica', 'italic');
 doc.text('Personal Assistant', marginX, posY);
 posY += 4;
 
+doc.setFont('helvetica', 'normal');
 const jwwk_pa_bullets = [
   'Manage purchasing for personal and business needs, handling budgets ranging from IDR 500K to 25 million.',
   'Design and distribute hiring flyers for multiple store branches.',
