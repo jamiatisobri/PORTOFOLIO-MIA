@@ -60,9 +60,9 @@ export default function Hero({ onNavigate, onOpenCVModal }: HeroProps) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="block bg-gradient-to-r from-violet-600 via-purple-600 to-blue-600 dark:from-violet-400 dark:via-purple-400 dark:to-blue-400 bg-clip-text text-transparent py-2.5 mt-1 font-display"
+                className="block bg-gradient-to-r from-violet-600 via-purple-650 to-blue-600 dark:from-violet-400 dark:via-purple-400 dark:to-blue-400 bg-clip-text text-transparent py-2.5 mt-1 font-display"
               >
-                Jamiati Sobri
+                Mia!
               </motion.span>
             </h1>
 
@@ -179,53 +179,6 @@ export default function Hero({ onNavigate, onOpenCVModal }: HeroProps) {
                 />
               </div>
 
-              {/* Floating Badge 1: Brand Engagement */}
-              <motion.div
-                initial={{ opacity: 0, x: -20, y: 10 }}
-                animate={{ opacity: 1, x: 0, y: 0 }}
-                transition={{ delay: 0.8, type: 'spring' }}
-                className="absolute -left-10 top-12 p-3.5 rounded-2xl bg-white/90 dark:bg-[#07070a]/90 backdrop-blur-md border border-slate-200/60 dark:border-white/10 shadow-lg flex items-center space-x-3 max-w-[180px]"
-              >
-                <div className="p-2 rounded-xl bg-violet-100 dark:bg-violet-955/50 text-violet-650 dark:text-violet-400 shrink-0">
-                  <TrendingUp className="w-4 h-4" />
-                </div>
-                <div>
-                  <span className="block text-[9px] font-mono text-slate-400 dark:text-slate-500 uppercase">Engagement</span>
-                  <span className="block text-sm font-bold text-slate-800 dark:text-white font-display">+60% Boost</span>
-                </div>
-              </motion.div>
-
-              {/* Floating Badge 2: LLDIKTI Award */}
-              <motion.div
-                initial={{ opacity: 0, x: 20, y: -10 }}
-                animate={{ opacity: 1, x: 0, y: 0 }}
-                transition={{ delay: 1.0, type: 'spring' }}
-                className="absolute -right-12 top-1/2 -translate-y-1/2 p-3.5 rounded-2xl bg-white/90 dark:bg-[#07070a]/90 backdrop-blur-md border border-slate-200/60 dark:border-white/10 shadow-lg flex items-center space-x-3 max-w-[190px]"
-              >
-                <div className="p-2 rounded-xl bg-amber-50 dark:bg-amber-955/40 text-amber-550 dark:text-amber-400 shrink-0">
-                  <Trophy className="w-4 h-4" />
-                </div>
-                <div>
-                  <span className="block text-[9px] font-mono text-slate-400 dark:text-slate-500 uppercase">LLDIKTI V Award</span>
-                  <span className="block text-xs font-bold text-slate-800 dark:text-white font-display">Harapan 1 Humas</span>
-                </div>
-              </motion.div>
-
-              {/* Floating Badge 3: Leads Assisted */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2, type: 'spring' }}
-                className="absolute -bottom-6 left-6 p-3.5 rounded-2xl bg-white/90 dark:bg-[#07070a]/90 backdrop-blur-md border border-slate-200/60 dark:border-white/10 shadow-lg flex items-center space-x-3 max-w-[180px]"
-              >
-                <div className="p-2 rounded-xl bg-blue-100 dark:bg-blue-955/50 text-blue-600 dark:text-blue-400 shrink-0">
-                  <Users className="w-4 h-4" />
-                </div>
-                <div>
-                  <span className="block text-[9px] font-mono text-slate-400 dark:text-slate-500 uppercase">Leads Assisted</span>
-                  <span className="block text-sm font-bold text-slate-800 dark:text-white font-display">~15 Customers</span>
-                </div>
-              </motion.div>
 
               {/* Decorative background blurs */}
               <div className="absolute -bottom-4 -left-4 w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-500 to-indigo-500 opacity-20 blur-xl -z-20" />

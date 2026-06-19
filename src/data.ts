@@ -7,7 +7,7 @@ export const skillsData: Skill[] = [
   { name: 'Content Strategy', level: 95, category: 'digital-marketing' },
   { name: 'Content Creation', level: 88, category: 'digital-marketing' },
   { name: 'Copywriting', level: 90, category: 'digital-marketing' },
-  { name: 'Marketing Communication', level: 92, category: 'digital-marketing' },
+  { name: 'Marketing Communication', level: 88, category: 'digital-marketing' },
   { name: 'Branding', level: 85, category: 'digital-marketing' },
 
   // Community & Campaign
@@ -17,7 +17,7 @@ export const skillsData: Skill[] = [
   { name: 'Project Management', level: 88, category: 'community-campaign' },
 
   // Analytics
-  { name: 'Meta Business Suite', level: 92, category: 'analytics' },
+  { name: 'Meta Business Suite', level: 88, category: 'analytics' },
   { name: 'Analytics & Performance Monitoring', level: 88, category: 'analytics' }
 ];
 
@@ -106,21 +106,21 @@ export const projectsData: Project[] = [
 export const experienceData: Experience[] = [
   {
     id: 'exp-utdi-marketing',
-    role: 'Social Media Strategist',
+    role: 'Student Staff - Social Media Strategist & Digital Advertiser',
     company: 'Universitas Teknologi Digital Indonesia (UTDI)',
-    duration: 'Sept 2024 - Present',
+    duration: 'May 2025 - Present',
     responsibilities: [
-      'Manage Social media management & content strategy across Instagram, TikTok, YouTube, and Facebook.',
-      'Spearhead content planning & calendar development aligning with university-wide academic timelines.',
-      'Conduct regular engagement rate & performance analysis to refine digital interactions.',
-      'Provide core digital marketing support for PMB student recruitment campaigns.',
-      'Drive branding & audience growth strategies to raise institutional visibility and target audiences.',
-      'Lead reporting & insights optimization to improve post timing and creative formats.'
+      'Led digital marketing campaigns for student admissions (PMB) and institutional branding across multiple social media platforms.',
+      'Managed organic and paid campaigns, delivering 2.7M+ impressions, 906K+ reach, and 19K+ engagements in 90 days.',
+      'Optimized Meta Ads performance through audience targeting, creative testing, and campaign analytics, achieving CTR up to 1.44%.',
+      'Drove 39K+ profile actions, including 37K+ profile visits, 1,335 website clicks, and 875 net follower growth.',
+      'Delivered data-driven campaign reports and collaborated with creative teams to optimize content performance and marketing outcomes.',
+      'Collaborated cross-functionally with creative and marketing teams to produce high-performing content that enhanced institutional branding and student engagement.'
     ],
     metrics: [
-      { label: 'Channels', value: 'IG, TikTok, FB, YT' },
-      { label: 'Campaign Group', value: 'PMB Support' },
-      { label: 'Performance', value: 'Optimized' }
+      { label: 'Impressions', value: '2.7M+' },
+      { label: 'Reach', value: '906K+' },
+      { label: 'Best CTR', value: '1.44%' }
     ]
   },
   {
@@ -166,7 +166,7 @@ export const experienceData: Experience[] = [
 ];
 
 export const educationData: Education = {
-  degree: "S1: Bisnis Digital (Undergraduate)",
+  degree: "Bachelor of Digital Business Candidate (GPA: 3.93/4.00)",
   institution: 'Universitas Teknologi Digital Indonesia (UTDI)',
   focus: [
     'Digital Marketing',
@@ -174,7 +174,7 @@ export const educationData: Education = {
     'Creative Writing',
     'E-Commerce Operations'
   ],
-  period: '2024 - 2028'
+  period: '2024 - present'
 };
 
 export const achievementsData: Achievement[] = [

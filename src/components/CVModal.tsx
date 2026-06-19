@@ -97,22 +97,20 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
                   <span>|</span>
                   <a href="https://www.linkedin.com/in/jamiati-sobri" target="_blank" rel="noreferrer" className="hover:underline">LinkedIn</a>
                   <span>|</span>
-                  <span className="hover:underline cursor-pointer">Portfolio</span>
+                  <a href="https://bit.ly/webportofoliomia" target="_blank" rel="noreferrer" className="hover:underline">Portfolio</a>
                 </div>
               </div>
 
               {/* Header Divider matching paper format */}
-              <div className="border-t border-[#0b2985] my-4 pt-4" />
-
-              {/* TENTANG SAYA */}
+              <div className="border-t border-[#0b2985] my-4 pt-4" />              {/* TENTANG SAYA */}
               <div className="space-y-3 mb-6 print-avoid-break">
                 <div className="text-center">
                   <h3 className="text-xs sm:text-sm font-bold text-[#0b2985] tracking-wider uppercase inline-block border-b-2 border-[#0b2985] pb-0.5">
-                    TENTANG SAYA
+                    ABOUT ME
                   </h3>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-800 text-justify leading-relaxed">
-                  A Digital Business student (Class of 2024) at Universitas Teknologi Digital Indonesia (UTDI) with experience as part of the marketing team in managing campus social media platforms, including Instagram, TikTok, YouTube, and Facebook. Currently pursuing a Bachelor’s degree in Digital Business to develop skills in digital marketing, social media management, and branding, and to apply them professionally. Highly motivated to contribute effectively in the dynamic creative and technology industries.
+                  A Digital Business student at Universitas Teknologi Digital Indonesia (UTDI) with a growing interest and expertise in Social Media Strategy, Digital Advertising, and Business Analysis. Possesses a solid understanding of digital marketing, social media management, content strategy, branding, and marketing communication. Skilled in analyzing marketing performance and business data to generate actionable insights that support decision-making and optimize marketing strategies. A collaborative, adaptable, and results-oriented individual committed to continuous learning, professional growth, and contributing effectively to the creative, business, and technology industries.
                 </p>
               </div>
 
@@ -120,12 +118,35 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
               <div className="space-y-4 mb-6">
                 <div className="text-center">
                   <h3 className="text-xs sm:text-sm font-bold text-[#0b2985] tracking-wider uppercase inline-block border-b-2 border-[#0b2985] pb-0.5">
-                    PENGALAMAN BEKERJA
+                    WORK EXPERIENCE
                   </h3>
                 </div>
                 
                 <div className="space-y-5">
                   {/* Job 1 */}
+                  <div className="space-y-1.5 print-avoid-break">
+                    <div className="flex flex-col sm:flex-row justify-between sm:items-baseline font-bold text-xs sm:text-sm text-black">
+                      <span>Student Staff - Universitas Teknologi Digital Indonesia (UTDI)</span>
+                      <span>May 2025 - present</span>
+                    </div>
+                    <p className="text-xs text-slate-500 italic">
+                      Contributing to student recruitment and institutional branding efforts by leading social media initiatives, developing content strategies, monitoring campaign performance, and supporting integrated digital marketing activities across multiple platforms.
+                    </p>
+                    
+                    <div className="pt-1">
+                      <p className="text-xs sm:text-sm font-medium italic text-black">Social Media Strategist & Digital Advertiser (Admission & Marketing Division)</p>
+                      <ul className="list-disc pl-5 text-xs text-slate-800 space-y-0.5 mt-1">
+                        <li>Led digital marketing campaigns for student admissions (PMB) and institutional branding across multiple social media platforms.</li>
+                        <li>Managed organic and paid campaigns, delivering 2.7M+ impressions, 906K+ reach, and 19K+ engagements in 90 days.</li>
+                        <li>Optimized Meta Ads performance through audience targeting, creative testing, and campaign analytics, achieving CTR up to 1.44%.</li>
+                        <li>Drove 39K+ profile actions, including 37K+ profile visits, 1,335 website clicks, and 875 net follower growth.</li>
+                        <li>Delivered data-driven campaign reports and collaborated with creative teams to optimize content performance and marketing outcomes.</li>
+                        <li>Collaborated cross-functionally with creative and marketing teams to produce high-performing content that enhanced institutional branding and student engagement.</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Job 2 */}
                   <div className="space-y-1.5 print-avoid-break">
                     <div className="flex flex-col sm:flex-row justify-between sm:items-baseline font-bold text-xs sm:text-sm text-black">
                       <span>Jogja Wisata Kain Kiloan (Textile)</span>
@@ -158,29 +179,6 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
                       </ul>
                     </div>
                   </div>
-
-                  {/* Job 2 */}
-                  <div className="space-y-1.5 print-avoid-break">
-                    <div className="flex flex-col sm:flex-row justify-between sm:items-baseline font-bold text-xs sm:text-sm text-black">
-                      <span>Universitas Teknologi Digital Indonesia (UTDI)</span>
-                      <span>Sept 2024 - saat ini</span>
-                    </div>
-                    <p className="text-xs text-slate-500 italic">
-                      A private university focused on digital technology, business, and creative industries, located in Yogyakarta.
-                    </p>
-                    
-                    <div className="pt-1">
-                      <p className="text-xs sm:text-sm font-medium italic text-black">Social Media Strategist</p>
-                      <ul className="list-disc pl-5 text-xs text-slate-800 space-y-0.5 mt-1">
-                        <li>Manage Social media management & content strategy</li>
-                        <li>Content planning & calendar development</li>
-                        <li>Engagement rate & performance analysis</li>
-                        <li>Digital marketing support (PMB campaign)</li>
-                        <li>Branding & audience growth</li>
-                        <li>Reporting & insight optimization</li>
-                      </ul>
-                    </div>
-                  </div>
                 </div>
               </div>
 
@@ -188,15 +186,18 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
               <div className="space-y-3 mb-6 print-avoid-break">
                 <div className="text-center">
                   <h3 className="text-xs sm:text-sm font-bold text-[#0b2985] tracking-wider uppercase inline-block border-b-2 border-[#0b2985] pb-0.5">
-                    PENDIDIKAN
+                    EDUCATION
                   </h3>
                 </div>
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline font-bold text-xs sm:text-sm text-black">
                   <span>Universitas Teknologi Digital Indonesia</span>
-                  <span>2024 - 2028</span>
+                  <span>2024 - present</span>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-800">
-                  S1: Bisnis Digital
+                <p className="text-xs sm:text-sm text-slate-850">
+                  Bachelor of Digital Business Candidate
+                </p>
+                <p className="text-xs text-slate-500 italic">
+                  Current GPA: 3.93 / 4.00
                 </p>
               </div>
 
@@ -204,25 +205,17 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
               <div className="space-y-3 mb-6 print-avoid-break">
                 <div className="text-center">
                   <h3 className="text-xs sm:text-sm font-bold text-[#0b2985] tracking-wider uppercase inline-block border-b-2 border-[#0b2985] pb-0.5">
-                    KEAHLIAN
+                    SKILLS
                   </h3>
                 </div>
                 <div className="grid grid-cols-3 gap-y-1.5 gap-x-4 text-xs sm:text-sm text-slate-800 py-1 pl-1">
-                  <div>CRM</div>
-                  <div>Online Marketplace</div>
+                  <div>Worksheet & Ms.Office</div>
+                  <div>Business Development</div>
                   <div>Communication</div>
                   
+                  <div>Meta Ads Manager</div>
+                  <div>Content Strategist</div>
                   <div>Problem Solving</div>
-                  <div>Bussiness Development</div>
-                  <div>Canva</div>
-                  
-                  <div>SEO</div>
-                  <div>Google Workspace</div>
-                  <div>Capcut</div>
-                  
-                  <div>Office Administration</div>
-                  <div>Adaptif</div>
-                  <div>Leadership</div>
                 </div>
               </div>
 
@@ -230,11 +223,11 @@ export default function CVModal({ isOpen, onClose }: CVModalProps) {
               <div className="space-y-3 print-avoid-break">
                 <div className="text-center">
                   <h3 className="text-xs sm:text-sm font-bold text-[#0b2985] tracking-wider uppercase inline-block border-b-2 border-[#0b2985] pb-0.5">
-                    LISENSI & SERTIFIKAT
+                    LICENSES & CERTIFICATIONS
                   </h3>
                 </div>
                 <div className="flex flex-col sm:flex-row justify-between sm:items-baseline font-bold text-xs sm:text-sm text-black">
-                  <span>Practical Office Advance – Lembaga Sertivikasi Profesi</span>
+                  <span>Practical Office Advance – Lembaga Sertivikasi Profesi BNSP</span>
                   <span>2022</span>
                 </div>
               </div>

@@ -67,7 +67,68 @@ posY += 5;
 // Contact Info
 doc.setFont('helvetica', 'normal');
 doc.setFontSize(8.5);
-doc.text('Yogyakarta, Indonesia | jamiatisobri@gmail.com | 089688478010 | LinkedIn | Portfolio', 105, posY, { align: 'center' });
+
+const emailText = 'jamiatisobri@gmail.com';
+const linkedinText = 'LinkedIn';
+const portfolioText = 'Portfolio';
+
+const prefixText = 'Yogyakarta, Indonesia | ';
+const middleText1 = ' | 089688478010 | ';
+const middleText2 = ' | ';
+
+const prefixWidth = doc.getTextWidth(prefixText);
+const emailWidth = doc.getTextWidth(emailText);
+const middle1Width = doc.getTextWidth(middleText1);
+const linkedinWidth = doc.getTextWidth(linkedinText);
+const middle2Width = doc.getTextWidth(middleText2);
+const portfolioWidth = doc.getTextWidth(portfolioText);
+
+const totalWidth = prefixWidth + emailWidth + middle1Width + linkedinWidth + middle2Width + portfolioWidth;
+let startX = 105 - (totalWidth / 2);
+
+// Draw prefixText (black)
+doc.setTextColor(textColor[0], textColor[1], textColor[2]);
+doc.text(prefixText, startX, posY);
+startX += prefixWidth;
+
+// Draw emailText (primaryColor, clickable)
+doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+doc.text(emailText, startX, posY);
+// Underline email
+doc.setDrawColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+doc.setLineWidth(0.2);
+doc.line(startX, posY + 0.5, startX + emailWidth, posY + 0.5);
+doc.link(startX, posY - 2.5, emailWidth, 3.5, { url: 'mailto:jamiatisobri@gmail.com' });
+startX += emailWidth;
+
+// Draw middleText1 (black)
+doc.setTextColor(textColor[0], textColor[1], textColor[2]);
+doc.text(middleText1, startX, posY);
+startX += middle1Width;
+
+// Draw linkedinText (primaryColor, clickable)
+doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+doc.text(linkedinText, startX, posY);
+// Underline LinkedIn
+doc.line(startX, posY + 0.5, startX + linkedinWidth, posY + 0.5);
+doc.link(startX, posY - 2.5, linkedinWidth, 3.5, { url: 'https://www.linkedin.com/in/jamiati-sobri' });
+startX += linkedinWidth;
+
+// Draw middleText2 (black)
+doc.setTextColor(textColor[0], textColor[1], textColor[2]);
+doc.text(middleText2, startX, posY);
+startX += middle2Width;
+
+// Draw portfolioText (primaryColor, clickable)
+doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2]);
+doc.text(portfolioText, startX, posY);
+// Underline Portfolio
+doc.line(startX, posY + 0.5, startX + portfolioWidth, posY + 0.5);
+const portfolioUrl = 'https://bit.ly/webportofoliomia';
+doc.link(startX, posY - 2.5, portfolioWidth, 3.5, { url: portfolioUrl });
+
+// Restore text color to black/slate
+doc.setTextColor(textColor[0], textColor[1], textColor[2]);
 posY += 4;
 
 // Divider line
@@ -76,27 +137,68 @@ doc.setLineWidth(0.3);
 doc.line(marginX, posY, 210 - marginX, posY);
 posY += 8;
 
-// TENTANG SAYA
-const summaryText = "A Digital Business student (Class of 2024) at Universitas Teknologi Digital Indonesia (UTDI) with experience as part of the marketing team in managing campus social media platforms, including Instagram, TikTok, YouTube, and Facebook. Currently pursuing a Bachelor’s degree in Digital Business to develop skills in digital marketing, social media management, and branding, and to apply them professionally. Highly motivated to contribute effectively in the dynamic creative and technology industries.";
+// ABOUT ME
+const summaryText = "A Digital Business student at Universitas Teknologi Digital Indonesia (UTDI) with a growing interest and expertise in Social Media Strategy, Digital Advertising, and Business Analysis. Possesses a solid understanding of digital marketing, social media management, content strategy, branding, and marketing communication. Skilled in analyzing marketing performance and business data to generate actionable insights that support decision-making and optimize marketing strategies. A collaborative, adaptable, and results-oriented individual committed to continuous learning, professional growth, and contributing effectively to the creative, business, and technology industries.";
 const splitSummary = doc.splitTextToSize(summaryText, printableWidth);
 const summaryHeight = (splitSummary.length * 4) + 2;
 
-renderSectionHeader('TENTANG SAYA');
+renderSectionHeader('ABOUT ME');
 doc.setFont('helvetica', 'normal');
 doc.setFontSize(8.5);
 doc.setTextColor(subTextColor[0], subTextColor[1], subTextColor[2]);
 doc.text(splitSummary, marginX, posY, { align: 'justify' });
 posY += summaryHeight + 6;
 
-// PENGALAMAN BEKERJA Header
-renderSectionHeader('PENGALAMAN BEKERJA');
+// WORK EXPERIENCE Header
+renderSectionHeader('WORK EXPERIENCE');
 
-// Experience 1: Jogja Wisata Kain Kiloan
+// Experience 1: UTDI (Student Staff)
+doc.setFont('helvetica', 'bold');
+doc.setFontSize(9.5);
+doc.setTextColor(textColor[0], textColor[1], textColor[2]);
+doc.text('Student Staff - Universitas Teknologi Digital Indonesia (UTDI)', marginX, posY);
+doc.text('May 2025 – present', 210 - marginX, posY, { align: 'right' });
+posY += 4.5;
+
+doc.setFont('helvetica', 'normal');
+doc.setFontSize(8.5);
+doc.setTextColor(subTextColor[0], subTextColor[1], subTextColor[2]);
+const utdi_desc = 'Contributing to student recruitment and institutional branding efforts by leading social media initiatives, developing content strategies, monitoring campaign performance, and supporting integrated digital marketing activities across multiple platforms.';
+const splitUtdiDesc = doc.splitTextToSize(utdi_desc, printableWidth);
+doc.text(splitUtdiDesc, marginX, posY, { align: 'justify' });
+posY += (splitUtdiDesc.length * 3.8) + 2;
+
+// Sub-role: Social Media Strategist & Digital Advertiser
+doc.setFont('helvetica', 'bolditalic');
+doc.setFontSize(9);
+doc.setTextColor(textColor[0], textColor[1], textColor[2]);
+doc.text('Social Media Strategist & Digital Advertiser (Admission & Marketing Division)', marginX, posY);
+posY += 4;
+
+doc.setFont('helvetica', 'normal');
+doc.setFontSize(8.5);
+const utdi_bullets = [
+  'Led digital marketing campaigns for student admissions (PMB) and institutional branding across multiple social media platforms.',
+  'Managed organic and paid campaigns, delivering 2.7M+ impressions, 906K+ reach, and 19K+ engagements in 90 days.',
+  'Optimized Meta Ads performance through audience targeting, creative testing, and campaign analytics, achieving CTR up to 1.44%.',
+  'Drove 39K+ profile actions, including 37K+ profile visits, 1,335 website clicks, and 875 net follower growth.',
+  'Delivered data-driven campaign reports and collaborated with creative teams to optimize content performance and marketing outcomes.',
+  'Collaborated cross-functionally with creative and marketing teams to produce high-performing content that enhanced institutional branding and student engagement.'
+];
+utdi_bullets.forEach(bullet => {
+  doc.text('•', marginX + 2, posY);
+  const splitText = doc.splitTextToSize(bullet, printableWidth - 5);
+  doc.text(splitText, marginX + 5, posY);
+  posY += (splitText.length * 3.8);
+});
+posY += 6;
+
+// Experience 2: Jogja Wisata Kain Kiloan
 doc.setFont('helvetica', 'bold');
 doc.setFontSize(9.5);
 doc.setTextColor(textColor[0], textColor[1], textColor[2]);
 doc.text('Jogja Wisata Kain Kiloan (Textile)', marginX, posY);
-doc.text('Jan 2022 - Oct 2024', 210 - marginX, posY, { align: 'right' });
+doc.text('Jan 2022 – Oct 2024', 210 - marginX, posY, { align: 'right' });
 posY += 4.5;
 
 doc.setFont('helvetica', 'normal');
@@ -149,73 +251,34 @@ jwwk_pa_bullets.forEach(bullet => {
 });
 posY += 6;
 
-// Experience 2: UTDI (Social Media Strategist)
-doc.setFont('helvetica', 'bold');
-doc.setFontSize(9.5);
-doc.setTextColor(textColor[0], textColor[1], textColor[2]);
-doc.text('Universitas Teknologi Digital Indonesia (UTDI)', marginX, posY);
-doc.text('Sept 2024 - saat ini', 210 - marginX, posY, { align: 'right' });
-posY += 4.5;
-
-doc.setFont('helvetica', 'normal');
-doc.setFontSize(8.5);
-doc.setTextColor(subTextColor[0], subTextColor[1], subTextColor[2]);
-doc.text('A private university focused on digital technology, business, and creative industries, located in Yogyakarta.', marginX, posY);
-posY += 5;
-
-// Sub-role: Social Media Strategist
-doc.setFont('helvetica', 'bolditalic');
-doc.setFontSize(9);
-doc.setTextColor(textColor[0], textColor[1], textColor[2]);
-doc.text('Social Media Strategist', marginX, posY);
-posY += 4;
-
-doc.setFont('helvetica', 'normal');
-doc.setFontSize(8.5);
-const utdi_bullets = [
-  'Manage Social media management & content strategy',
-  'Content planning & calendar development',
-  'Engagement rate & performance analysis',
-  'Digital marketing support (PMB campaign)',
-  'Branding & audience growth',
-  'Reporting & insight optimization'
-];
-utdi_bullets.forEach(bullet => {
-  doc.text('•', marginX + 2, posY);
-  const splitText = doc.splitTextToSize(bullet, printableWidth - 5);
-  doc.text(splitText, marginX + 5, posY);
-  posY += (splitText.length * 3.8);
-});
-posY += 6;
-
-// PENDIDIKAN Section
-renderSectionHeader('PENDIDIKAN');
+// EDUCATION Section
+renderSectionHeader('EDUCATION');
 
 doc.setFont('helvetica', 'bold');
 doc.setFontSize(9.5);
 doc.setTextColor(textColor[0], textColor[1], textColor[2]);
 doc.text('Universitas Teknologi Digital Indonesia', marginX, posY);
-doc.text('2024 - 2028', 210 - marginX, posY, { align: 'right' });
+doc.text('2024 - present', 210 - marginX, posY, { align: 'right' });
 posY += 4.5;
 
 doc.setFont('helvetica', 'normal');
 doc.setFontSize(8.5);
 doc.setTextColor(subTextColor[0], subTextColor[1], subTextColor[2]);
-doc.text('S1: Bisnis Digital', marginX, posY);
+doc.text('Bachelor of Digital Business Candidate', marginX, posY);
+posY += 4;
+doc.text('Current GPA: 3.93 / 4.00', marginX, posY);
 posY += 8;
 
-// KEAHLIAN Section
-renderSectionHeader('KEAHLIAN');
+// SKILLS Section
+renderSectionHeader('SKILLS');
 
 doc.setFont('helvetica', 'normal');
 doc.setFontSize(8.5);
 doc.setTextColor(textColor[0], textColor[1], textColor[2]);
 
 const skillsGrid = [
-  ['CRM', 'Online Marketplace', 'Communication'],
-  ['Problem Solving', 'Bussiness Development', 'Canva'],
-  ['SEO', 'Google Workspace', 'Capcut'],
-  ['Office Administration', 'Adaptif', 'Leadership']
+  ['Worksheet & Ms.Office', 'Business Development', 'Communication'],
+  ['Meta Ads Manager', 'Content Strategist', 'Problem Solving']
 ];
 
 skillsGrid.forEach(row => {
@@ -226,13 +289,13 @@ skillsGrid.forEach(row => {
 });
 posY += 5;
 
-// LISENSI & SERTIFIKAT Section
-renderSectionHeader('LISENSI & SERTIFIKAT');
+// LICENSES & CERTIFICATIONS Section
+renderSectionHeader('LICENSES & CERTIFICATIONS');
 
 doc.setFont('helvetica', 'bold');
 doc.setFontSize(9.5);
 doc.setTextColor(textColor[0], textColor[1], textColor[2]);
-doc.text('Practical Office Advance – Lembaga Sertivikasi Profesi', marginX, posY);
+doc.text('Practical Office Advance - Lembaga Sertivikasi Profesi BNSP', marginX, posY);
 doc.text('2022', 210 - marginX, posY, { align: 'right' });
 
 // Save directly to the public folder
